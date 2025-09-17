@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FRC Scouting Entry Form</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <script src="scouting.js" defer></script>
+</head>
+<body>
+    <h1>Scouting Entry</h1>
+    <form id="scoutingForm">
+        <label for="teamNumber">Team Number:</label>
+        <input type="number" id="teamNumber" name="teamNumber" required><br><br>
+
+        <label for="matchNumber">Match Number:</label>
+        <input type="number" id="matchNumber" name="matchNumber" required><br><br>
+
+        <div class="score-area">
+            <h2>Scoring Positions</h2>
+            <div class="score-row">
+                <span>L4</span>
+                <button type="button" onclick="updateCount('highGoal', 1)">+</button>
+                <span id="highGoalCount">0</span>
+                <button type="button" onclick="updateCount('highGoal', -1)">-</button>
+            </div>
+            <div class="score-row">
+                <span>L3</span>
+                <button type="button" onclick="updateCount('highGoal', 1)">+</button>
+                <span id="highGoalCount">0</span>
+                <button type="button" onclick="updateCount('highGoal', -1)">-</button>
+            </div>
+            <div class="score-row">
+                <span>L2</span>
+                <button type="button" onclick="updateCount('highGoal', 1)">+</button>
+                <span id="highGoalCount">0</span>
+                <button type="button" onclick="updateCount('highGoal', -1)">-</button>
+            </div>
+            <div class="score-row">
+                <span>L1</span>
+                <button type="button" onclick="updateCount('lowGoal', 1)">+</button>
+                <span id="lowGoalCount">0</span>
+                <button type="button" onclick="updateCount('lowGoal', -1)">-</button>
+            </div>
+            <div class="score-row">
+                <span>Processor</span>
+                <button type="button" onclick="updateCount('highGoal', 1)">+</button>
+                <span id="highGoalCount">0</span>
+                <button type="button" onclick="updateCount('highGoal', -1)">-</button>
+            </div>
+            <div class="score-row">
+                <span>Barge</span>
+                <button type="button" onclick="updateCount('highGoal', 1)">+</button>
+                <span id="highGoalCount">0</span>
+                <button type="button" onclick="updateCount('highGoal', -1)">-</button>
+            </div>
+        </div>
+        <br>
+        <label for="notes">Notes:</label><br>
+        <textarea id="notes" name="notes" rows="4" cols="40"></textarea><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+    <div id="submitStatus"></div>
+</body>
+</html>
