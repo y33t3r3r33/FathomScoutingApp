@@ -2,64 +2,71 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>FRC Scouting Entry Form</title>
-    <!-- <link rel="stylesheet" href="style.css"> -->
+    <title>Fathom Scouting Entry</title>
+    <link rel="stylesheet" href="style.css">
     <script src="scouting.js" defer></script>
 </head>
 <body>
-    <h1>Scouting Entry</h1>
-    <form id="scoutingForm">
-        <label for="teamNumber">Team Number:</label>
-        <input type="number" id="teamNumber" name="teamNumber" required><br><br>
+    <div class="container">
+        <h1>Scouting</h1>
+        <form id="scoutingForm" class="scouting-card">
+            <div class="field-row">
+                <label for="teamNumber">Team Number:</label>
+                <input type="number" id="teamNumber" name="teamNumber" required>
+            </div>
+            <div class="field-row">
+                <label for="matchNumber">Match Number:</label>
+                <input type="number" id="matchNumber" name="matchNumber" required>
+            </div>
 
-        <label for="matchNumber">Match Number:</label>
-        <input type="number" id="matchNumber" name="matchNumber" required><br><br>
+            <div class="score-area">
+                <h2>Scoring Positions</h2>
+                <div class="score-row">
+                    <span class="score-label">L4</span>
+                    <button type="button" class="btn score-btn" data-pos="L4" data-delta="1">+</button>
+                    <span id="L4Count" class="score-count">0</span>
+                    <button type="button" class="btn score-btn" data-pos="L4" data-delta="-1">-</button>
+                </div>
+                <div class="score-row">
+                    <span class="score-label">L3</span>
+                    <button type="button" class="btn score-btn" data-pos="L3" data-delta="1">+</button>
+                    <span id="L3Count" class="score-count">0</span>
+                    <button type="button" class="btn score-btn" data-pos="L3" data-delta="-1">-</button>
+                </div>
+                <div class="score-row">
+                    <span class="score-label">L2</span>
+                    <button type="button" class="btn score-btn" data-pos="L2" data-delta="1">+</button>
+                    <span id="L2Count" class="score-count">0</span>
+                    <button type="button" class="btn score-btn" data-pos="L2" data-delta="-1">-</button>
+                </div>
+                <div class="score-row">
+                    <span class="score-label">L1</span>
+                    <button type="button" class="btn score-btn" data-pos="L1" data-delta="1">+</button>
+                    <span id="L1Count" class="score-count">0</span>
+                    <button type="button" class="btn score-btn" data-pos="L1" data-delta="-1">-</button>
+                </div>
+                <div class="score-row">
+                    <span class="score-label">Processor</span>
+                    <button type="button" class="btn score-btn" data-pos="Processor" data-delta="1">+</button>
+                    <span id="ProcessorCount" class="score-count">0</span>
+                    <button type="button" class="btn score-btn" data-pos="Processor" data-delta="-1">-</button>
+                </div>
+                <div class="score-row">
+                    <span class="score-label">Barge</span>
+                    <button type="button" class="btn score-btn" data-pos="Barge" data-delta="1">+</button>
+                    <span id="BargeCount" class="score-count">0</span>
+                    <button type="button" class="btn score-btn" data-pos="Barge" data-delta="-1">-</button>
+                </div>
+            </div>
 
-        <div class="score-area">
-            <h2>Scoring Positions</h2>
-            <div class="score-row">
-                <span>L4</span>
-                <button type="button" onclick="updateCount('highGoal', 1)">+</button>
-                <span id="highGoalCount">0</span>
-                <button type="button" onclick="updateCount('highGoal', -1)">-</button>
+            <div class="field-row">
+                <label for="notes">Notes:</label>
+                <textarea id="notes" name="notes" rows="4" cols="40" placeholder="Scout observations, strategies, robot issues..."></textarea>
             </div>
-            <div class="score-row">
-                <span>L3</span>
-                <button type="button" onclick="updateCount('highGoal', 1)">+</button>
-                <span id="highGoalCount">0</span>
-                <button type="button" onclick="updateCount('highGoal', -1)">-</button>
-            </div>
-            <div class="score-row">
-                <span>L2</span>
-                <button type="button" onclick="updateCount('highGoal', 1)">+</button>
-                <span id="highGoalCount">0</span>
-                <button type="button" onclick="updateCount('highGoal', -1)">-</button>
-            </div>
-            <div class="score-row">
-                <span>L1</span>
-                <button type="button" onclick="updateCount('lowGoal', 1)">+</button>
-                <span id="lowGoalCount">0</span>
-                <button type="button" onclick="updateCount('lowGoal', -1)">-</button>
-            </div>
-            <div class="score-row">
-                <span>Processor</span>
-                <button type="button" onclick="updateCount('highGoal', 1)">+</button>
-                <span id="highGoalCount">0</span>
-                <button type="button" onclick="updateCount('highGoal', -1)">-</button>
-            </div>
-            <div class="score-row">
-                <span>Barge</span>
-                <button type="button" onclick="updateCount('highGoal', 1)">+</button>
-                <span id="highGoalCount">0</span>
-                <button type="button" onclick="updateCount('highGoal', -1)">-</button>
-            </div>
-        </div>
-        <br>
-        <label for="notes">Notes:</label><br>
-        <textarea id="notes" name="notes" rows="4" cols="40"></textarea><br><br>
 
-        <button type="submit">Submit</button>
-    </form>
-    <div id="submitStatus"></div>
+            <button type="submit" class="btn submit-btn">Submit</button>
+            <div id="submitStatus" class="submit-status"></div>
+        </form>
+    </div>
 </body>
 </html>
